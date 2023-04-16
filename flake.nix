@@ -15,18 +15,20 @@
   outputs = { self, nixpkgs, hyprland }:
     let
       user = "marc";
-      location = "$HOME/.config";
+      system = "x86_64-linux";
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
       };
       lib = nixpkgs.lib;
     in {
-      nixosConfigurations = (                                               # NixOS configurations
-        import ./hosts {                                                    # Imports ./hosts/default.nix
-          inherit (nixpkgs) lib;
-          inherit inputs nixpkgs user location hyprland;                    # Also inherit home-manager so it does not need to be defined here.
-        }
-      );
+      nixosConfigurations = {
+        desktop_home = lib.nixosSystem {
+          inherit system;
+          modules = [
+            ./systems/base.nix
+          ];
+        };
+      };
     };
 }

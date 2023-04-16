@@ -1,23 +1,15 @@
 
-{inputs, nixpkgs, user, location, hyprland, config, pkgs, ... }:
+{ config, pkgs, ... }:
 
-let
-    system = "x86_64-linux";
-    pkgs = import nixpkgs {
-      inherit system;
-      config.allowUnfree = true;                              # Allow proprietary software
-    };
-    lib = nixpkgs.lib;
-in
 {
-  imports = [ # Include the results of the hardware scan.
-    ./hardware-configuration.nix
-    ./system.nix
-    ./io.nix
-    ./packages.nix
-    ./gui.nix
-  ];
-
+  imports =
+    [ # Include the results of the hardware scan.
+      ./hardware-configuration.nix
+      ./system.nix
+      ./io.nix
+      ./packages.nix
+      ./gui.nix
+    ];
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
