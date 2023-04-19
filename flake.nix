@@ -1,5 +1,5 @@
 {
-  description = " Yust work you ***** ";
+  description = " just work you **** ";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -8,11 +8,11 @@
 
   outputs = {self, nixpkgs, hyprland, ...}: {
     
-    nixosConfigurations.hyperland = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.hyprland = nixpkgs.lib.nixosSystem {
       modules = [
         hyprland.nixosModules.default
         {programs.hyprland.enable = true;}
-        # ...
+        ./nixos/configuration.nix
       ];
     };
 
