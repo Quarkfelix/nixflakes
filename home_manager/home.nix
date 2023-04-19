@@ -18,4 +18,15 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+
+  programs.git = {
+    enable = true;
+    userName = "marc";
+    userEmail = "marc-felix.schmitz@protonmail.com";
+    gitui.enable = true;
+  }
+
+
+
 }
