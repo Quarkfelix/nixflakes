@@ -1,19 +1,18 @@
 {
-  description = "Your new nix config";
+  description = " Yust work you ***** ";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-22.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     hyprland.url = "github:hyprwm/Hyprland";
   };
 
-  outputs = { nixpkgs, home-manager, hyprland, ... }@inputs: {
+  outputs = { self, nixpkgs, hyprland, ... }: {
     nixosConfigurations = {
       desktop = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; inherit hyprland; };
         modules = [ 
-          ./nixos/configuration.nix
           hyprland.nixosModules.default 
           { programs.hyprland.enable = true; }
+          ./nixos/configuration.nix
         ];
       };
     };

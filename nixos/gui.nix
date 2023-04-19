@@ -23,5 +23,4 @@
   #services.xserver.displayManager.defaultSession = "none+bspwm";
   #services.xserver.windowManager.bspwm.configFile = "/home/marc/.config/dotfiles-nixos/bspwmrc";
   #services.xserver.windowManager.bspwm.sxhkd.configFile = "/home/marc/.config/dotfiles-nixos/sxhkdrc";
-
 }
