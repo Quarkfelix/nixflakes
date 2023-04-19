@@ -9,10 +9,6 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./system.nix
-      ./io.nix
-      ./packages.nix
-      ./gui.nix
     ];
 
   # Bootloader.
