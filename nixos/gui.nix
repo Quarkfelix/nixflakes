@@ -19,13 +19,9 @@
   # services.xserver.desktopManager.gnome.enable = true;
 
   # Enable the BSPWM Desktop Environment
-  services.xserver.windowManager.bspwm.enable = true;
-  services.xserver.displayManager.defaultSession = "none+bspwm";
-  services.xserver.windowManager.bspwm.configFile = "/home/marc/.config/dotfiles-nixos/bspwmrc";
-  services.xserver.windowManager.bspwm.sxhkd.configFile = "/home/marc/.config/dotfiles-nixos/sxhkdrc";
-
-  # Enable the Hyprland Desktop Environment
-  # programs.hyprland.enable = true;
-
+  #services.xserver.windowManager.bspwm.enable = true;
+  #services.xserver.displayManager.defaultSession = "none+bspwm";
+  #services.xserver.windowManager.bspwm.configFile = "/home/marc/.config/dotfiles-nixos/bspwmrc";
+  #services.xserver.windowManager.bspwm.sxhkd.configFile = "/home/marc/.config/dotfiles-nixos/sxhkdrc";
 
 }
