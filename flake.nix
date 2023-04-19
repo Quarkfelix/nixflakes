@@ -6,7 +6,7 @@
     hyprland.url = "github:hyprwm/Hyprland";
   };
 
-  outputs = {self, nixpkgs, ...}: {
+  outputs = {self, nixpkgs, hyperland, ...}: {
     
     nixosConfigurations.hyperland = nixpkgs.lib.nixosSystem {
       modules = [
