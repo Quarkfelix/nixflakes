@@ -13,42 +13,32 @@
       hyprland = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit self inputs; };
         modules = 
-          [ (import ./nixos/base.nix) ] ++
-          [ (import ./nixos/system.nix) ] ++
-          [ (import ./nixos/packages.nix) ] ++
-          [ (import ./nixos/io.nix) ] ++
-          [ (import ./nixos/hyprland.nix) ];
+          [ (import ./modules/base.nix) ] ++
+          [ (import ./modules/system.nix) ] ++
+          [ (import ./modules/packages.nix) ] ++
+          [ (import ./modules/io.nix) ] ++
+          [ (import ./modules/hyprland.nix) ];
       };
 
       # config for bspwm
       bspwm = nixpkgs.lib.nixosSystem {
-        modules = [
-          ./nixos/base.nix
-          ./nixos/system.nix
-          ./nixos/packages.nix
-          ./nixos/io.nix
-          ./nixos/bspwm.nix
-        ];
+        modules = 
+          [ (import ./modules/base.nix) ] ++
+          [ (import ./modules/system.nix) ] ++
+          [ (import ./modules/packages.nix) ] ++
+          [ (import ./modules/io.nix) ] ++
+          [ (import ./modules/bspwm.nix) ];
       };
 
       # config for gnome
       gnome = nixpkgs.lib.nixosSystem {
-        modules = [
-          ./nixos/base.nix
-          ./nixos/system.nix
-          ./nixos/packages.nix
-          ./nixos/io.nix
-          ./nixos/gnome.nix
-        ];
+        modules = 
+          [ (import ./modules/base.nix) ] ++
+          [ (import ./modules/system.nix) ] ++
+          [ (import ./modules/packages.nix) ] ++
+          [ (import ./modules/io.nix) ] ++
+          [ (import ./modules/gnome.nix) ];
       };
-
     };
-      
-
-    #nixosConfigurations.bspwm = nixpkgs.lib.nixosSystem {
-    #  modules = [ 
-    #    ./nixos/configuration.nix
-    #  ];
-    #};
   };
 }
