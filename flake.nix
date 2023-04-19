@@ -19,8 +19,6 @@
     nixosConfigurations.bspwm = nixpkgs.lib.nixosSystem {
       modules = [ 
         ./nixos/configuration.nix
-        hyprland.nixosModules.default 
-        { programs.hyprland.enable = true; }
       ];
     };
   };
