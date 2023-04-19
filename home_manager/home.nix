@@ -24,9 +24,12 @@
     enable = true;
     userName = "marc";
     userEmail = "marc-felix.schmitz@protonmail.com";
-    gitui.enable = true;
-  }
+  };
 
-
+  # Enable the BSPWM Desktop Environment
+  xsession.windowManager.bspwm.enable = true;
+  services.xserver.displayManager.defaultSession = "none+bspwm";
+  services.xserver.windowManager.bspwm.configFile = "/home/marc/.config/dotfiles-nixos/bspwmrc";
+  services.xserver.windowManager.bspwm.sxhkd.configFile = "/home/marc/.config/dotfiles-nixos/sxhkdrc";
 
 }
