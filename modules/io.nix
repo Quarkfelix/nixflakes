@@ -18,7 +18,7 @@
   # Configure keyboard
   services.xserver = {
     layout = "us";
-    xkbVariant = "altgr-intl";
+    #xkbVariant = "altgr-intl";
   };
 
   # Configure console keymap
