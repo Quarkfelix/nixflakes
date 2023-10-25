@@ -66,5 +66,5 @@
             [ (import ./modules/gnome.nix) ];
         };
       };
-    }
+    };
 }
